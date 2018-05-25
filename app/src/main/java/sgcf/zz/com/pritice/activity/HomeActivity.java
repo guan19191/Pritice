@@ -8,9 +8,9 @@ import android.support.v4.view.ViewPager;
 import java.util.List;
 
 import sgcf.zz.com.pritice.FirstMVP.ArticleFragment;
-import sgcf.zz.com.pritice.FirstMVP.BaseActivity;
-import sgcf.zz.com.pritice.FirstMVP.HomePresenter;
-import sgcf.zz.com.pritice.FirstMVP.HomeView;
+import sgcf.zz.com.pritice.FirstMVP.base.BaseActivity;
+import sgcf.zz.com.pritice.FirstMVP.presenter.HomePresenter;
+import sgcf.zz.com.pritice.FirstMVP.view.HomeView;
 import sgcf.zz.com.pritice.R;
 
 public class HomeActivity extends BaseActivity<HomeView, HomePresenter> implements HomeView {

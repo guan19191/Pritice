@@ -16,8 +16,8 @@ class ArticleDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_article_detail)
         val webView = findViewById<WebView>(R.id.web_view)
-        initWebView(webView);
-        val url = intent.getStringExtra("url");
+        initWebView(webView)
+        val url = intent.getStringExtra("url")
 
 //        fun MutableList<Any>.swap(index1: Int, index2: Int) {
 //            val tmp = this[index1] // “this”对应该列表
@@ -36,7 +36,7 @@ class ArticleDetailActivity : AppCompatActivity() {
 //            Log.e("list", "" + item.toString())
 //        }
 
-        webView.loadUrl(url);
+        webView.loadUrl(url)
 
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
@@ -54,7 +54,7 @@ class ArticleDetailActivity : AppCompatActivity() {
         webView.webChromeClient = object : WebChromeClient() {
             override fun onReceivedTitle(view: WebView?, title: String?) {
                 super.onReceivedTitle(view, title)
-                Log.e(tag, title);
+                Log.e(tag, title)
             }
 
             override fun onProgressChanged(view: WebView?, newProgress: Int) {

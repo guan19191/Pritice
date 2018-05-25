@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
+import sgcf.zz.com.pritice.FirstMVP.presenter.BasePresenter;
 import sgcf.zz.com.pritice.widget.CustomDialog;
 
 public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {

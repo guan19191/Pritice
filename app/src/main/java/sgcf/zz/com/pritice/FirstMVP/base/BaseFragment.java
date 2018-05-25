@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.base;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import sgcf.zz.com.pritice.FirstMVP.presenter.BasePresenter;
 
 /**
  * Created by admin
@@ -20,7 +22,6 @@ public abstract class BaseFragment<V,T extends BasePresenter<V>> extends Fragmen
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
-
         //判断是否使用MVP模式
         mPresenter = createPresenter();
         if (mPresenter != null) {

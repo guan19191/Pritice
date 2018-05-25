@@ -1,4 +1,6 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.presenter;
+
+import sgcf.zz.com.pritice.FirstMVP.view.HomeView;
 
 /**
  * Created by admin

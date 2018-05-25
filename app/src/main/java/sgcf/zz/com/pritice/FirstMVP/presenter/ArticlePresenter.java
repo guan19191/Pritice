@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.presenter;
 
 import android.util.Log;
 
@@ -9,6 +9,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import sgcf.zz.com.pritice.Bean.HomeArticleBean;
 import sgcf.zz.com.pritice.Bean.HomeBannerBean;
+import sgcf.zz.com.pritice.FirstMVP.view.ArticleView;
 import sgcf.zz.com.pritice.NewWork.Api;
 
 /**

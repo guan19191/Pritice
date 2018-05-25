@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.view;
 
 import android.support.v4.app.Fragment;
 

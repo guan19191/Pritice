@@ -2,6 +2,9 @@ package sgcf.zz.com.pritice.app;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,22 +19,15 @@ import sgcf.zz.com.pritice.NewWork.OkHttp3Utils;
  * Desc:Pritice
  */
 
-@SuppressLint("Registered")
-public class MyApplication extends Application {
-
+public class MyApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
     }
 
-    private void initRetrofit() {
-        OkHttpClient client = OkHttp3Utils.getOkHttpSingletonInstance();
-
-        Gson gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
-                .setLenient()
-                .create();//使用 gson coverter，统一日期请求格式
-
-//
+    @Override
+    protected void attachBaseContext(Context base) {
+        MultiDex.install(this);
+        super.attachBaseContext(base);
     }
 }

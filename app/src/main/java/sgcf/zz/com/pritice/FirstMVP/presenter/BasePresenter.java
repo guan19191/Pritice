@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.presenter;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;

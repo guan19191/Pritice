@@ -5,6 +5,9 @@ import android.widget.ListView;
 
 import sgcf.zz.com.pritice.Bean.HomeArticleBean;
 import sgcf.zz.com.pritice.Bean.HomeBannerBean;
+import sgcf.zz.com.pritice.FirstMVP.base.BaseFragment;
+import sgcf.zz.com.pritice.FirstMVP.presenter.ArticlePresenter;
+import sgcf.zz.com.pritice.FirstMVP.view.ArticleView;
 import sgcf.zz.com.pritice.R;
 import sgcf.zz.com.pritice.adapter.ArticleAdapter;
 

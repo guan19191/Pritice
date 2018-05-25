@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP;
+package sgcf.zz.com.pritice.FirstMVP.view;
 
 import sgcf.zz.com.pritice.Bean.HomeArticleBean;
 import sgcf.zz.com.pritice.Bean.HomeBannerBean;
