@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP.base;
+package sgcf.zz.com.pritice.mvp.base;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,16 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import sgcf.zz.com.pritice.FirstMVP.presenter.BasePresenter;
-
 /**
- * Created by admin
- * Date:  2018/3/30.
- * Copyright on 2018 Henan Bijia Industrial Co., Ltd.
- * Desc:Pritice
  */
-public abstract class BaseFragment<V,T extends BasePresenter<V>> extends Fragment {
-    T mPresenter;
+public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragment {
+    public T mPresenter;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context="sgcf.zz.com.pritice.app.MainActivity">
+    tools:context="sgcf.zz.com.pritice.MainActivity">
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/refreshLayout"
@@ -35,9 +36,14 @@
                 <sgcf.zz.com.pritice.widget.MyListView
                     android:id="@+id/lv_article"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </sgcf.zz.com.pritice.widget.MyListView>
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_article_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp" />
             </LinearLayout>
         </ScrollView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>

@@ -1,4 +1,4 @@
-package sgcf.zz.com.pritice.FirstMVP.base;
+package sgcf.zz.com.pritice.mvp.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,19 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
-import sgcf.zz.com.pritice.FirstMVP.presenter.BasePresenter;
-import sgcf.zz.com.pritice.widget.CustomDialog;
-
 public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {
 
     protected T mPresenter;
-    private CustomDialog mDialogWaiting;
+
+    protected BaseActivity baseActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        App.activities.add(this);
-
+        baseActivity = this;
         init();
         mPresenter = createPresenter();
         if (mPresenter != null) {
@@ -82,10 +80,6 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
      * 隐藏等待提示框
      */
     public void hideWaitingDialog() {
-        if (mDialogWaiting != null) {
-            mDialogWaiting.dismiss();
-            mDialogWaiting = null;
-        }
     }
 
 }
