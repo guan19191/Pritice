@@ -17,15 +17,12 @@ import sgcf.zz.com.pritice.R;
 import sgcf.zz.com.pritice.util.SharedPreferencesUtil;
 
 /**
- * Created by admin
- * Date:  2018/3/22.
- * Copyright on 2018 Henan Bijia Industrial Co., Ltd.
- * Desc:Pritice
+ *
  */
 
 public class MyApplication extends MultiDexApplication {
 
-    private static MyApplication mApp;
+    private static MyApplication mContext;
 
     //static 代码段可以防止内存泄露
     static {
@@ -46,11 +43,13 @@ public class MyApplication extends MultiDexApplication {
             }
         });
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = this;
         //初始化 SharedPreferences工具类
-        SharedPreferencesUtil.init(this,"cahe_data",MODE_PRIVATE);
+        SharedPreferencesUtil.init(this, "cahe_data", MODE_PRIVATE);
     }
 
     @Override
@@ -59,7 +58,7 @@ public class MyApplication extends MultiDexApplication {
         MultiDex.install(this);
     }
 
-    public static MyApplication getInstance(){
-        return mApp;
+    public static MyApplication getInstance() {
+        return mContext;
     }
 }

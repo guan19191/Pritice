@@ -12,15 +12,11 @@ import java.util.Map;
 import sgcf.zz.com.pritice.util.FileUtils;
 
 /**
- * Created by admin
- * Date:  2018/3/8.
- * Copyright on 2018 Henan Bijia Industrial Co., Ltd.
- * Desc:Pritice
  */
 
 public class Constant {
 
-    public static String BASE_ANDROID_URL = "http://www.wanandroid.com/";
+    public static String WAN_ANDROID_URL = "http://www.wanandroid.com/";
     public static final String IMG_BASE_URL = "http://statics.zhuishushenqi.com";
 
     public static final String API_BASE_URL = "http://api.zhuishushenqi.com";
