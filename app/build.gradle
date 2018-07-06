@@ -66,6 +66,6 @@ dependencies {
 
 //    implementation 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
 
-    compile 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:1.0.3'
 
 }

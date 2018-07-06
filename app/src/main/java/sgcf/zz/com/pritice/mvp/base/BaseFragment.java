@@ -17,7 +17,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
-        //判断是否使用MVP模式
+        //创建Presenter
         mPresenter = createPresenter();
         if (mPresenter != null) {
             mPresenter.attachView((V) this);//因为之后所有的子类都要实现对应的View接口
@@ -29,7 +29,6 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        return super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(provideContentViewId(), container, false);
-//        ButterKnife.bind(this, rootView);
         initView(rootView);
         return rootView;
     }

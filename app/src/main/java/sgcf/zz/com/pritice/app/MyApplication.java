@@ -14,6 +14,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
 import sgcf.zz.com.pritice.R;
+import sgcf.zz.com.pritice.util.LogUtils;
 import sgcf.zz.com.pritice.util.SharedPreferencesUtil;
 
 /**
@@ -22,7 +23,7 @@ import sgcf.zz.com.pritice.util.SharedPreferencesUtil;
 
 public class MyApplication extends MultiDexApplication {
 
-    private static MyApplication mContext;
+    public static MyApplication mContext;
 
     //static 代码段可以防止内存泄露
     static {
@@ -50,6 +51,7 @@ public class MyApplication extends MultiDexApplication {
         mContext = this;
         //初始化 SharedPreferences工具类
         SharedPreferencesUtil.init(this, "cahe_data", MODE_PRIVATE);
+        LogUtils.init(this);
     }
 
     @Override
