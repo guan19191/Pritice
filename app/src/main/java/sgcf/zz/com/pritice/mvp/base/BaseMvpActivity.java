@@ -1,5 +1,7 @@
 package sgcf.zz.com.pritice.mvp.base;
 
+import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,17 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
-public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {
+public abstract class BaseMvpActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {
 
     protected T mPresenter;
 
-    protected BaseActivity baseActivity;
+    protected BaseMvpActivity baseMvpActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        App.activities.add(this);
-        baseActivity = this;
+        baseMvpActivity = this;
         init();
         mPresenter = createPresenter();
         if (mPresenter != null) {
@@ -77,6 +79,22 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
      * 隐藏等待提示框
      */
     public void hideWaitingDialog() {
+    }
+
+
+    /**
+     * 设置页面最外层布局 FitsSystemWindows 属性
+     * 当该属性设置 true 时，会在屏幕最上方预留出状态栏高度的 padding。 实现沉浸式状态栏
+     *
+     * @param activity
+     * @param value
+     */
+    public static void setFitsSystemWindows(Activity activity, boolean value) {
+        ViewGroup contentFrameLayout = (ViewGroup) activity.findViewById(android.R.id.content);
+        View parentView = contentFrameLayout.getChildAt(0);
+        if (parentView != null && Build.VERSION.SDK_INT >= 14) {
+            parentView.setFitsSystemWindows(value);
+        }
     }
 
 }

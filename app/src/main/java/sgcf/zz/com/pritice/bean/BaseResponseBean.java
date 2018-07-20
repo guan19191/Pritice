@@ -1,13 +1,6 @@
 package sgcf.zz.com.pritice.bean;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import com.google.gson.Gson;
-
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 
 /**
  */
@@ -40,8 +33,13 @@ public class BaseResponseBean<T> implements Serializable {
         this.errorMsg = errorMsg;
     }
 
-    public static BaseResponseBean fromJson() {
 
-        return null;
+    @Override
+    public String toString() {
+        return "BaseResponseBean{" +
+                "data=" + data +
+                ", errorCode=" + errorCode +
+                ", errorMsg='" + errorMsg + '\'' +
+                '}';
     }
 }

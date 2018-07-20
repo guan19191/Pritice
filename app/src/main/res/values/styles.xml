@@ -22,4 +22,10 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+
+    //valuse
+
+    <style name="TranslucentTheme" parent="AppTheme"></style>
+
+
 </resources>

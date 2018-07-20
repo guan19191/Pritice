@@ -79,8 +79,8 @@ public class RetrofitFactory {
         return instance;
     }
 
-    public Service getService() {
-        return retrofit.create(Service.class);
+    public ApiService getService() {
+        return retrofit.create(ApiService.class);
     }
 
 
