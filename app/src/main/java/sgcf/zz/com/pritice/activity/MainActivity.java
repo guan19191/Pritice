@@ -1,7 +1,6 @@
 package sgcf.zz.com.pritice.activity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,18 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import sgcf.zz.com.pritice.MvpView.MainView;
 import sgcf.zz.com.pritice.R;
 import sgcf.zz.com.pritice.adapter.HomeAdapter;
 import sgcf.zz.com.pritice.bean.HomeArticleListBean;
 import sgcf.zz.com.pritice.bean.HomeBannerDataBean;
-import sgcf.zz.com.pritice.db.MyHelper;
 import sgcf.zz.com.pritice.mvp.base.BaseMvpActivity;
 import sgcf.zz.com.pritice.presenter.MainPresenter;
-import sgcf.zz.com.pritice.util.LogUtils;
 import sgcf.zz.com.pritice.widget.LoadingDialog;
 
 public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> implements MainView {

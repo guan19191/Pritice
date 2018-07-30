@@ -1,5 +1,6 @@
 package sgcf.zz.com.pritice.mvp.base;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -22,6 +23,11 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
         if (mPresenter != null) {
             mPresenter.attachView((V) this);//因为之后所有的子类都要实现对应的View接口
         }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
     }
 
     @Nullable
