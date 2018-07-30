@@ -27,6 +27,9 @@ import com.jaeger.library.StatusBarUtil;
 import sgcf.zz.com.pritice.R;
 import sgcf.zz.com.pritice.util.StatusBarUtils;
 
+/**
+ * 沉浸式状态栏 和drawerLayout 一起使用
+ */
 public class Test2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -64,24 +67,24 @@ public class Test2Activity extends AppCompatActivity
 
 //        fitsSystemWindows(this);
 
-        addStatusViewWithColor(this,getResources().getColor(R.color.colorAccent));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            int flagTranslucentStatus = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-            int flagTranslucentNavigation = WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                //系统大于5.0
-                Window window = getWindow();
-                WindowManager.LayoutParams attributes = window.getAttributes();
-                attributes.flags |= flagTranslucentNavigation;
-                window.setAttributes(attributes);
-                getWindow().setStatusBarColor(Color.TRANSPARENT);
-            } else {
-                Window window = getWindow();
-                WindowManager.LayoutParams attributes = window.getAttributes();
-                attributes.flags |= flagTranslucentStatus | flagTranslucentNavigation;
-                window.setAttributes(attributes);
-            }
-        }
+//        addStatusViewWithColor(this,getResources().getColor(R.color.colorAccent));
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            int flagTranslucentStatus = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+//            int flagTranslucentNavigation = WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                //系统大于5.0
+//                Window window = getWindow();
+//                WindowManager.LayoutParams attributes = window.getAttributes();
+//                attributes.flags |= flagTranslucentNavigation;
+//                window.setAttributes(attributes);
+//                getWindow().setStatusBarColor(Color.TRANSPARENT);
+//            } else {
+//                Window window = getWindow();
+//                WindowManager.LayoutParams attributes = window.getAttributes();
+//                attributes.flags |= flagTranslucentStatus | flagTranslucentNavigation;
+//                window.setAttributes(attributes);
+//            }
+//        }
 
 
 

@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
+import sgcf.zz.com.pritice.widget.LoadingDialog;
+
 public abstract class BaseMvpActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {
 
     protected T mPresenter;
 
     protected BaseMvpActivity baseMvpActivity;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

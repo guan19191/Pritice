@@ -8,4 +8,5 @@
     <color name="backGroundColor">#cccccc</color>
     <color name="bGColor">#f1f1f1</color>
     <color name="titleColor" >#000000</color>
+    <color name="loading_bg_color">#80000000</color>
 </resources>

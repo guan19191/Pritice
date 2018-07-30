@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
-
+//apply plugin: 'walle'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -16,11 +16,22 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
+        //调试版本，无混淆
         release {
             minifyEnabled false
             multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
+        //开发环境
+//        develop {
+//
+//        }
+//        //生产环境
+//        product {
+//
+//        }
     }
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.2'
@@ -70,4 +81,14 @@ dependencies {
     implementation "android.arch.paging:runtime:$paging_version"
 
     compile 'com.jaeger.statusbarutil:library:1.5.1'
+
+
+    debugCompile 'me.ele:uetool:1.0.15'
+    releaseCompile 'me.ele:uetool-no-op:1.0.15'
+
+    // if you want to show more attrs about Fresco's DraweeView
+    debugCompile 'me.ele:uetool-fresco:1.0.15'
+    compile 'com.meituan.android.walle:library:1.0.3'
+    //banner
+    compile 'com.youth.banner:banner:1.4.10'  //最新版本
 }

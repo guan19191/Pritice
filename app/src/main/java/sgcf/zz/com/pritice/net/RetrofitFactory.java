@@ -84,4 +84,8 @@ public class RetrofitFactory {
     }
 
 
+    public <S> S getService(Class<S> serviceClass) {
+        return retrofit.create(serviceClass);
+    }
+
 }

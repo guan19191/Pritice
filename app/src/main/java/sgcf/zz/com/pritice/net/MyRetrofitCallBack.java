@@ -25,12 +25,14 @@ public abstract class MyRetrofitCallBack<T extends BaseResponseBean<D>, D> imple
         if (response.isSuccessful()) {
             Log.e(TAG, "onResponse: " + response.toString());
             if (response.body() != null) {
+//                Log.e(TAG, "onResponse: " + response.body().toString());
                 if (response.body().getErrorCode() == 0) {
                     try {
                         D d = response.body().getData();
                         onSuccess(d);
                     } catch (Exception e) {
                         e.printStackTrace();
+                        onFailed(false, response.code(), "出现异常");
                     }
                 } else {
                     onFailed(true, response.body().getErrorCode(), response.body().getErrorMsg());
