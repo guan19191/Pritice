@@ -2,6 +2,7 @@ package sgcf.zz.com.pritice.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -32,7 +33,7 @@ public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> imple
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_article);
+        setContentView(R.layout.activity_article);
         loadingDialog = new LoadingDialog(this);
         initView();
         loadingDialog.showDialog();
@@ -53,6 +54,7 @@ public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> imple
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -92,7 +94,14 @@ public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> imple
         if (homeAdapter == null) {
             articleList = datas;
             homeAdapter = new HomeAdapter(articleList, MainActivity.this);
+            rv_home.addItemDecoration(new DividerItemDecoration(MainActivity.this,DividerItemDecoration.VERTICAL));
             rv_home.setAdapter(homeAdapter);
+            homeAdapter.setOnItemClickListener(new HomeAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(List<Integer> list, int position) {
+                    
+                }
+            });
         } else {
             articleList.addAll(datas);
             homeAdapter.notifyDataSetChanged();
@@ -126,4 +135,10 @@ public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> imple
     public void showErrorToast(String errorMsg) {
 
     }
+
+
+
+
+
+
 }

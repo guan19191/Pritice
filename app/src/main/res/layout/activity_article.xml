@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="sgcf.zz.com.pritice.activity.MainActivity">
 
     <Button
@@ -17,8 +17,27 @@
         android:textColor="@color/white"
         android:textSize="16sp" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <sgcf.zz.com.pritice.widget.PageGridView
+            android:id="@+id/pagingGridView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:PagingColums="4"
+            app:PagingRows="2" />
+
+        <sgcf.zz.com.pritice.widget.MyPageIndicator
+            android:id="@+id/pageindicator"
+            android:layout_width="match_parent"
+            android:background="#EEEEEE"
+            android:gravity="center"
+            android:layout_height="30dp" />
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

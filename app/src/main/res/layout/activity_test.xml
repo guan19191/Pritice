@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".activity.TestActivity">
 
-    <LinearLayout
+    <!--<sgcf.zz.com.pritice.widget.MyTextView-->
+        <!--android:id="@+id/tv_my_text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:text="MyTextView"-->
+        <!--android:textColor="@color/titleColor"-->
+        <!--android:layout_height="60dp" />-->
+    <sgcf.zz.com.pritice.widget.LineView
+        android:id="@+id/line_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="200dp" />
 
-    </LinearLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>

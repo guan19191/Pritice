@@ -2,9 +2,7 @@ package sgcf.zz.com.pritice.net;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
-import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
 import retrofit2.Call;
@@ -25,7 +23,7 @@ public abstract class MyRetrofitCallBack<T extends BaseResponseBean<D>, D> imple
         if (response.isSuccessful()) {
             Log.e(TAG, "onResponse: " + response.toString());
             if (response.body() != null) {
-//                Log.e(TAG, "onResponse: " + response.body().toString());
+                //code为0时 服务器返回成功
                 if (response.body().getErrorCode() == 0) {
                     try {
                         D d = response.body().getData();

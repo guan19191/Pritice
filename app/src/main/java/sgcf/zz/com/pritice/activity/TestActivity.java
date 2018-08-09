@@ -1,81 +1,57 @@
 package sgcf.zz.com.pritice.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.graphics.Color;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+
+import java.util.ArrayList;
 
 import sgcf.zz.com.pritice.R;
 import sgcf.zz.com.pritice.util.MyStatusBarUtil;
+import sgcf.zz.com.pritice.widget.LineView;
+import sgcf.zz.com.pritice.widget.MyTextView;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity implements  View.OnClickListener {
 
+    private static final String TAG = TestActivity.class.getSimpleName();
+    private LineView lineView;
+    ArrayList<Double> yList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        lineView = findViewById(R.id.line_view);
 
-        MyStatusBarUtil.transparencyStatusBar(this);
-//        MyStatusBarUtil.fullScreen(this);
+        yList = new ArrayList<Double>();
+        yList.add((double) 2.103);
+        yList.add(4.05);
+        yList.add(6.60);
+        yList.add(3.08);
+        yList.add(4.32);
+        yList.add(2.0);
+        yList.add(5.0);
 
-//设置 paddingTop
-//        ViewGroup rootView = (ViewGroup) mActivity.getWindow().getDecorView().findViewById(android.R.id.content);
-//        rootView.setPadding(0, getStatusBarHeight(mActivity), 0, 0);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            //5.0 以上直接设置状态栏颜色
-//            activity.getWindow().setStatusBarColor(color);
-//        } else {
-//            //根布局添加占位状态栏
-//            ViewGroup decorView = (ViewGroup) mActivity.getWindow().getDecorView();
-//            View statusBarView = new View(activity);
-//            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-//                    getStatusBarHeight(activity));
-//            statusBarView.setBackgroundColor(color);
-//            decorView.addView(statusBarView, lp);
-//        }
-
-
-
-
-
-
+        ArrayList<String> xRawDatas = new ArrayList<String>();
+        xRawDatas.add("05-19");
+        xRawDatas.add("05-20");
+        xRawDatas.add("05-21");
+        xRawDatas.add("05-22");
+        xRawDatas.add("05-23");
+        xRawDatas.add("05-24");
+        xRawDatas.add("05-25");
+        xRawDatas.add("05-26");
+        lineView.setData(yList, xRawDatas, 8, 2);
+        lineView.setMstyle(LineView.Linestyle.Curve);
     }
 
 
-    /**
-     * 利用反射获取状态栏高度
-     *
-     * @return
-     */
-    public int getStatusBarHeight() {
-        int result = 0;
-        //获取状态栏高度的资源id
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            default:
+                break;
         }
-        return result;
     }
-
-    /**
-     * 添加状态栏占位视图
-     *
-     * @param activity
-     */
-    private void addStatusViewWithColor(Activity activity, int color) {
-        ViewGroup contentView = (ViewGroup) activity.findViewById(android.R.id.content);
-        View statusBarView = new View(activity);
-        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                getStatusBarHeight());
-        statusBarView.setBackgroundColor(color);
-        contentView.addView(statusBarView, lp);
-    }
-
-
 }

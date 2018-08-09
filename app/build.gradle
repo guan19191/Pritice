@@ -90,5 +90,6 @@ dependencies {
     debugCompile 'me.ele:uetool-fresco:1.0.15'
     compile 'com.meituan.android.walle:library:1.0.3'
     //banner
-    compile 'com.youth.banner:banner:1.4.10'  //最新版本
+    compile 'com.bigkoo:ConvenientBanner:2.1.4'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
 }

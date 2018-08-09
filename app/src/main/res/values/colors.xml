@@ -9,4 +9,7 @@
     <color name="bGColor">#f1f1f1</color>
     <color name="titleColor" >#000000</color>
     <color name="loading_bg_color">#80000000</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_ff4631">#ff4631</color>
+    <color name="color_999999">#999999</color>
 </resources>
